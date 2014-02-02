@@ -21,6 +21,17 @@ sudo easy_install pip
 sudo pip install matplotlib
 ```
 
+## How you can work with this project?
+clone this repository by
+```
+git clone https://github.com/khasathan/envctrlsys-map.git
+```
+
+or download zip file on right button
+
+
+
+
 ## How to run?
 ```
 python map.py
