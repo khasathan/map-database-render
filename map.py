@@ -1,6 +1,8 @@
 '''
 
-Author:     KHASATHAN
+Author: 
+  KHASATHAN
+
 Required:   
   - Python 2.7
   - Matplotlib
@@ -13,7 +15,6 @@ Required:
 import sys
 import struct
 import matplotlib.pyplot as plt
-import matplotlib.lines as plt_lines
 
 BLOCK_SIZE = 2
 DATA_START_IDX = 216
@@ -21,10 +22,6 @@ MESH_COOR_OFFSET = 10
 MESH_COOR_BLOCK_SIZE = 4
 
 class Map:
-  plt = None
-  plt_lines = None
-  subplt = None
-  line2d = None
 
   def __init__(self):
     ''' '''
@@ -60,7 +57,6 @@ class Map:
         coor = struct.unpack('hh', bindata[i]
         + bindata[i+1] + bindata[i+2] + bindata[i+3])
         bulk_coor.append(coor)
-        print "( %s ,  %s ) " % (coor[0], coor[1])
       
       data.append(bulk_coor)
       
@@ -73,8 +69,6 @@ class Map:
       except Exception, e:
         break
       
-      print "-------------------------"
-    
     return data
 
 
@@ -96,26 +90,27 @@ class Map:
 if __name__ == '__main__':
   map = Map()
   meshdef = map.readCsvFile('meshdef.csv')
-  fig = plt.figure() 
-  ax = fig.add_subplot(111)  
-  c = 1
+  fig = plt.figure(figsize=(100, 100), facecolor='white')
+  subplot = plt.subplot()
 
   for i in range(1, len(meshdef)):
     meshdata = meshdef[i].split(',')
     meshfile = 'MeshData/' + meshdata[0] + '.mfv'
-    print meshfile
+    minX = int(meshdata[2])
+    minY = int(meshdata[3])
     bulk_coor = map.readMeshFile(meshfile)
-    #print bulk_coor
-    
-    
+
     for bc in bulk_coor:
-      x = []
-      y = []
+      x_list = []
+      y_list = []
       for coor in bc:
-        x.append(coor[0])
-        y.append(coor[1])
-      line = ax.plot(x, y, color='k', linewidth=0.1, linestyle='-')
-    
+        x = coor[0] + minX
+        y = coor[1] + minY
+        x_list.append(x)
+        y_list.append(y)
+      subplot.plot(x_list, y_list, color='k', linewidth=0.2, linestyle='-', figure=fig)
 
+  subplot.autoscale(True)
+  fig.add_subplot(subplot)
+  plt.axis('off')
   plt.show()
-
