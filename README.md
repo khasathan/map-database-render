@@ -21,6 +21,12 @@ sudo easy_install pip
 sudo pip install matplotlib
 ```
 
+if you can't install with ```pip``` use this command below
+
+```
+sudo apt-get install python-matplotlib
+```
+
 ## How you can work with this project?
 clone this repository by
 ```
