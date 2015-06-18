@@ -1,13 +1,10 @@
-# Environment Control System - Homework #1
-
-This project is homework #1 for "Environment Control System".
+# map database renderer
 
 The program renders map from map database (binary file) using Python and Matplotlib.
 
-----
 
 ## Required software
-- Python 2.7 and greater
+- Python 2.7
 - Matplotlib
 
 ## Preriquisites
