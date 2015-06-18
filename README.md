@@ -27,7 +27,7 @@ sudo apt-get install python-matplotlib
 ## How you can work with this project?
 clone this repository by
 ```
-git clone https://github.com/khasathan/matplotlib-map-renderer.git
+git clone https://github.com/khasathan/map-database-render.git
 ```
 
 or download zip file on right button
