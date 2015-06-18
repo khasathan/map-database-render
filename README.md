@@ -27,7 +27,7 @@ sudo apt-get install python-matplotlib
 ## How you can work with this project?
 clone this repository by
 ```
-git clone https://github.com/khasathan/envctrlsys-map.git
+git clone https://github.com/khasathan/matplotlib-map-renderer.git
 ```
 
 or download zip file on right button
@@ -47,5 +47,7 @@ chmod +x map.py
 ./map.py
 ```
 
+result should be like this 
 
+[![map result](http://i.imgur.com/ulVHo7J.png "map result")](http://i.imgur.com/ulVHo7J.png)
 
