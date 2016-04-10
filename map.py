@@ -61,7 +61,7 @@ class Map:
       data.append(bulk_coor)
       
       # if cannot read amount of bytes of next mesh
-      # it's mean end of file
+      # it means end of file
       try:
         amount = struct.unpack('h', bindata[mesh_end] + bindata[mesh_end + 1])[0]
         mesh_start = mesh_end
